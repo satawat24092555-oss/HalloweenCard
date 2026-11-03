@@ -1,0 +1,114 @@
+body {
+    background-image: url("Assets/Background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background: none;
+    margin: 0;
+    padding: 0;
+    background-color: none;
+}
+
+#center-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pumpkin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    transform-origin: center center; 
+    
+    width: 200px;
+    max-width: 45vw;
+    height: auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@keyframes hover_pumpkin {
+    0%   { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+    25%  { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); }
+    50%  { transform: translate(-50%, -50%) scale(1.2) rotate(20deg); }
+    75%  { transform: translate(-50%, -50%) scale(1.2) rotate(-20deg); }
+    100% { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); }
+}
+
+#pumpkin:hover {
+    animation: hover_pumpkin 0.25s ease-in-out;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+@keyframes batFly {
+    0%   { translate: 0 0; }
+    100% { translate: 0 -110vh; }
+}
+
+.batEffect {
+    position: fixed;
+    bottom: 0;
+    transform-origin: bottom left;
+    pointer-events: none;
+    animation: batFly 0.7s linear forwards;
+    z-index: 999;
+}
+
+#card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85vw;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    background-color: rgb(190, 246, 253);
+    border-radius: 16px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+#maluvImg {
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#wish {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    line-height: 1.5;
+    margin: 0;
+    z-index: 2;
+}
+
+#asd {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
+    padding: 25px;
+    margin: 0;
+    z-index: 2;
+    color: rgb(0, 0, 0, 0.5);
+}
